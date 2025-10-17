@@ -180,6 +180,7 @@ saveMemoButton.addEventListener('click', async () => {
     if (error) {
         alert('메모 저장 중 오류가 발생했습니다: ' + error.message);
     } else {
+        await fetchTodos(); // Re-fetch the entire list to show the new memo
         closeMemoModal();
     }
 });
