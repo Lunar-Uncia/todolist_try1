@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>My Todo List</h1>
+            <div class="user-controls">
+                <span id="user-email"></span>
+                <button id="logout-button">로그아웃</button>
+                <button id="delete-account-button">회원탈퇴</button>
+            </div>
+        </header>
+
+        <main>
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="새로운 할 일..." required>
+                <input type="datetime-local" id="todo-due-date">
+                <button type="submit" id="add-todo-button">추가</button>
+            </form>
+
+            <ul id="todo-list">
+                <!-- 투두 아이템이 여기에 렌더링됩니다. -->
+            </ul>
+        </main>
+    </div>
+
+    <!-- 메모 수정 모달 -->
+    <div id="memo-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>메모 수정</h2>
+            <textarea id="memo-text" placeholder="여기에 메모를 입력하세요..."></textarea>
+            <button id="save-memo-button">저장</button>
+            <button id="close-modal-button">닫기</button>
+        </div>
+    </div>
+
+    <!-- Supabase JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

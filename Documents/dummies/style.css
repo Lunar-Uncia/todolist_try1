@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #3652AD;
+    --secondary-color: #280274;
+    --background-color: #f0f2f5;
+    --container-bg: #ffffff;
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+/* --- 인증 페이지 --- */
+.auth-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+#auth-form {
+    background: var(--container-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form button:hover {
+    background-color: var(--secondary-color);
+}
+
+.form-switcher {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.form-switcher a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    display: none;
+}
+
+/* --- 메인 앱 페이지 --- */
+.app-container {
+    width: 95%;
+    max-width: 800px;
+    background: var(--container-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+#user-email {
+    font-size: 0.9rem;
+    color: #666;
+    margin-right: 15px;
+}
+
+#logout-button, #delete-account-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+#logout-button {
+    background-color: #f39c12;
+    color: white;
+}
+#logout-button:hover {
+    background-color: #e67e22;
+}
+
+#delete-account-button {
+    background-color: var(--error-color);
+    color: white;
+    margin-left: 10px;
+}
+#delete-account-button:hover {
+    background-color: #c0392b;
+}
+
+
+#todo-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#todo-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#todo-due-date {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#add-todo-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+    background-color: #f1f1f1;
+}
+
+.todo-item.completed .task-text {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.complete-checkbox {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.task-content {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.task-text {
+    font-size: 1.1rem;
+}
+
+.task-meta {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.memo-button, .delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 5px;
+    margin-left: 10px;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.memo-button:hover {
+    color: #f39c12;
+}
+
+.delete-button:hover {
+    color: var(--error-color);
+}
+
+/* --- 메모 모달 --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+#memo-text {
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+#save-memo-button, #close-modal-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#save-memo-button {
+    background-color: var(--success-color);
+    color: white;
+}
+
+#close-modal-button {
+    background-color: #ccc;
+    margin-left: 10px;
+}
+
+/* --- Task Memo Style --- */
+.task-memo {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
+    padding-left: 12px;
+    border-left: 3px solid #eee;
+    white-space: pre-wrap; /* To respect newlines in the memo */
+}
